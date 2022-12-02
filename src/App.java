@@ -28,7 +28,7 @@ public class App {
     }
 
     public static boolean inRange(double value, double start, double finish) {
-        return value >= start && value < finish;
+        return value >= start && value <= finish;
     }
 
     public static int generateRandomAge() {
