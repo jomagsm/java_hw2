@@ -37,3 +37,10 @@ public class App {
         return random.nextInt(range) + 1;
     }
 }
+
+// example result 
+// AGE: 49 TEMP: 30 Stay at home ✖
+// AGE: 26 TEMP: -1 You can go for a walk ✓
+// AGE: 33 TEMP: -20 You can go for a walk ✓
+// AGE: 48 TEMP: -10 You can go for a walk ✓
+// AGE: 18 TEMP: 5 You can go for a walk ✓
