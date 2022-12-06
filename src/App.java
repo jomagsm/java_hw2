@@ -1,46 +1,42 @@
-import java.util.Random;
+import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        int age = generateRandomAge();
-        System.out.println("AGE: "+ age + " TEMP: 30 " + getWalkText(age, 30));
-        age = generateRandomAge();
-        System.out.println("AGE: "+ age + " TEMP: -1 " + getWalkText(age, -1));
-        age = generateRandomAge();
-        System.out.println("AGE: "+ age + " TEMP: -20 " + getWalkText(age, -20));
-        age = generateRandomAge();
-        System.out.println("AGE: "+ age + " TEMP: -10 " + getWalkText(age, -10));
-        age = generateRandomAge();
-        System.out.println("AGE: "+ age + " TEMP: 5 " + getWalkText(age, 5));
+        final float[] floatNumbers = { -23.45f, 2.45f, -3.45f, -3.5f, 3.5f, -5.87f, -3.45f, 6.5f, 2.54f,
+                3.3f, 5.05f, 2.54f, 4.65f, 2.4f, 3.5f, };
+        final int[] listNumber = { 0, -2, 5, -4, 1, 2 };
+
+        System.out.println(getAverageNumber(floatNumbers));
+        sortList(listNumber);
     }
 
-    public static String getWalkText(int age, double temp) {
-        final String goWalk = "You can go for a walk " + '\u2713';
-        final String stayAtHome = "Stay at home " + '\u2716';
-        if (inRange(age, 20, 45) && inRange(temp, -20, 30)) {
-            return goWalk;
-        } else if (age < 20 && inRange(temp, 0, 28)) {
-            return goWalk;
-        } else if (age > 45 && inRange(temp, -10, 25)) {
-            return goWalk;
+    public static float getAverageNumber(float[] array) {
+        int counter = 0;
+        float sum = 0;
+        boolean flag = false;
+        for (float number : array) {
+            if (number < 0) {
+                flag = true;
+            } else if (number > 0 && flag) {
+                sum += number;
+                counter += 1;
+            }
         }
-        return stayAtHome;
+        return sum / counter;
     }
 
-    public static boolean inRange(double value, double start, double finish) {
-        return value >= start && value <= finish;
+    public static void sortList(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                int temp = array[i];
+                if(array[i]> array[j]){
+                    array[i] = array[j];
+                    array[j] = temp;
+                    break;
+                }
+            }
+            System.out.println(Arrays.toString(array));
+        }
     }
 
-    public static int generateRandomAge() {
-        Random random = new Random();
-        int range = 100 - 1 + 1;
-        return random.nextInt(range) + 1;
-    }
 }
-
-// example result 
-// AGE: 49 TEMP: 30 Stay at home ✖
-// AGE: 26 TEMP: -1 You can go for a walk ✓
-// AGE: 33 TEMP: -20 You can go for a walk ✓
-// AGE: 48 TEMP: -10 You can go for a walk ✓
-// AGE: 18 TEMP: 5 You can go for a walk ✓
