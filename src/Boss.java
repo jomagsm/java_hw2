@@ -1,35 +1,18 @@
-public class Boss {
-    private int health;
-    private int damage;
-    private String bossDefense;
-
-    public int getHealth() {
-        return health;
+public class Boss extends GameEntity {
+    public Boss(
+            int health,
+            int damage, Weapon weapon) {
+        super();
+        this.setHealth(health);
+        this.setDamage(damage);
+        this.setWeapon(weapon);
     }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
-    public String getBossDefense() {
-        return bossDefense;
-    }
-
-    public void setBossDefense(String bossDefense) {
-        this.bossDefense = bossDefense;
-    }
-
-    public void printBossInfo() {
+    public void printInfo() {
         System.out.println(
-                "Boss health: " + this.health + " Boss damage: " + this.damage + " Boss defense: " + this.bossDefense);
+                "Boss health: " + Color.GREEN + this.getHealth() + Color.RESET + " Boss damage: " + Color.RED
+                        + this.getDamage() + Color.RESET
+                        + " Boss weapon: "
+                        + Color.BLUE + this.getWeapon().getName() + Color.RESET);
     }
-
 }

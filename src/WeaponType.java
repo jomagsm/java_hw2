@@ -1,0 +1,3 @@
+public enum WeaponType {
+    HAND_TO_HAND_COMBAT_WEAPONS, BOMBS,  SEMIAUTOMATIC
+}
