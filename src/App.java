@@ -7,8 +7,11 @@ public class App {
         Boss boss = new Boss(2000, 50, sword);
         boss.printInfo();
 
-        Skeleton firstSkeleton = new Skeleton(200, 10, null, 10);
-        Skeleton secondSkeleton = new Skeleton(300, 8, null, 8);
+        Weapon crossbow = new Weapon();
+        crossbow.setName("Crossbow");
+        crossbow.setWeaponType(WeaponType.RANGED_WEAPONS);
+        Skeleton firstSkeleton = new Skeleton(200, 10, crossbow, 10);
+        Skeleton secondSkeleton = new Skeleton(300, 8, crossbow, 8);
         firstSkeleton.printInfo();
         secondSkeleton.printInfo();
     }

@@ -20,7 +20,8 @@ public class Skeleton extends Boss {
         System.out.println(
                 "Skeleton health: " + Color.GREEN + this.getHealth() + Color.RESET + " Skeleton damage: "
                         + Color.RED
-                        + this.getDamage() + Color.RESET
+                        + this.getDamage() + Color.RESET + " Skeleton weapon: "
+                        + Color.BLUE + this.getWeapon().getName() + Color.RESET
                         + " Skeleton qnt arrow: "
                         + Color.YELLOW + qntArrow + Color.RESET);
     }
