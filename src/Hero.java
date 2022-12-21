@@ -1,35 +1,24 @@
-public class Hero {
+public abstract class Hero implements HavingSuperAbility {
     private int health;
     private int damage;
-    private String attackType;
-
-    public Hero(int health, int damage) {
-        this.health = health;
-        this.damage = damage;
-    }
-
-    public Hero(int health, int damage, String attackType) {
-        this.health = health;
-        this.damage = damage;
-        this.attackType = attackType;
-    }
-
+    private TypeOfSuperPower typeOfSuperPower;
+    
     public int getHealth() {
         return health;
     }
-
+    public void setHealth(int health) {
+        this.health = health;
+    }
     public int getDamage() {
         return damage;
     }
-
-    public String getAttackType() {
-        return attackType;
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
-
-    public void printHeroInfo() {
-        final String attackType = this.attackType != null ? this.attackType : "No attack type";
-        System.out.println(
-                "Hero health: " + this.health + " Hero damage: " + this.damage + " Hero attack type: "
-                        + attackType);
+    public TypeOfSuperPower getTypeOfSuperPower() {
+        return typeOfSuperPower;
+    }
+    public void setTypeOfSuperPower(TypeOfSuperPower typeOfSuperPower) {
+        this.typeOfSuperPower = typeOfSuperPower;
     }
 }
