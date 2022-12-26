@@ -1,3 +1,0 @@
-public enum WeaponType {
-    HAND_TO_HAND_COMBAT_WEAPONS, BOMBS, RANGED_WEAPONS;
-}
